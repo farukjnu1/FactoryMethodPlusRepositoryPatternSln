@@ -24,6 +24,8 @@ namespace FactoryMethodPlusRepositoryPattern
             {
                 Console.WriteLine($"{product.Name}: ${product.Price}");
             }
+
+            Console.ReadLine();
         }
     }
 }
