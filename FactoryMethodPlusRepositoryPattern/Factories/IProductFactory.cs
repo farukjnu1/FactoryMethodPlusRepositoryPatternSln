@@ -11,5 +11,6 @@ namespace FactoryMethodPlusRepositoryPattern.Factories
     public interface IProductFactory
     {
         Product CreateProduct(int id, string name, decimal price);
+        Product UpdateProduct(int id, string name, decimal price);
     }
 }

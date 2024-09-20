@@ -3,9 +3,11 @@ using FactoryMethodPlusRepositoryPattern.Models;
 using FactoryMethodPlusRepositoryPattern.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace FactoryMethodPlusRepositoryPattern.Services
 {
@@ -31,6 +33,23 @@ namespace FactoryMethodPlusRepositoryPattern.Services
         {
             return _productRepository.GetAll();
         }
+
+        public Product GetById(int id)
+        {
+            return _productRepository.GetById(id);
+        }
+
+        public void UpdateProduct(int id, string name, decimal price)
+        {
+            var product = _productFactory.UpdateProduct(id, name, price);
+            _productRepository.Update(product);
+        }
+
+        public void DeleteProduct(int id)
+        {
+            _productRepository.Remove(id);
+        }
+
     }
 
 }

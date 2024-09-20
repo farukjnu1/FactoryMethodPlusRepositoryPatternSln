@@ -12,5 +12,7 @@ namespace FactoryMethodPlusRepositoryPattern.Repositories
         void Add(Product product);
         Product GetById(int id);
         IEnumerable<Product> GetAll();
+        void Update(Product product);
+        void Remove(int id);
     }
 }

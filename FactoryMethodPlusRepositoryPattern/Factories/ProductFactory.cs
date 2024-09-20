@@ -14,5 +14,9 @@ namespace FactoryMethodPlusRepositoryPattern.Factories
         {
             return new Product(id, name, price);
         }
+        public Product UpdateProduct(int id, string name, decimal price)
+        {
+            return new Product(id, name, price);
+        }
     }
 }

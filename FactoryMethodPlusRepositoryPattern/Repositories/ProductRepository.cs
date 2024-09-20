@@ -25,5 +25,24 @@ namespace FactoryMethodPlusRepositoryPattern.Repositories
         {
             return _products;
         }
+
+        public void Update(Product product)
+        {
+            var _product = _products.FirstOrDefault(p => p.Id == product.Id);
+            if (_product != null)
+            {
+                _product.Name = product.Name;
+                _product.Price = product.Price;
+            }
+        }
+
+        public void Remove(int id)
+        {
+            var product = _products.FirstOrDefault(p => p.Id == id);
+            if (product != null) 
+            {
+                _products.Remove(product);
+            }
+        }
     }
 }
